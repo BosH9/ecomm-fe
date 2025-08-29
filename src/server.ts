@@ -9,10 +9,15 @@ import { join } from 'node:path';
 
 import product from './app/api/product';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+console.log('API_URL', process.env['API_URL']);
 
 /**
  * Example Express Rest API endpoints can be defined here.
